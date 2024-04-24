@@ -2,7 +2,7 @@
 
     <string name="app_name">Instagram</string>
 
-    <string name="default_webclient_id">1063176613988-8ngrdfd9jonnjqlmfc8o06l1a9hmsp90.apps.googleusercontent.com</string>
+    <string name="default_webclient_id">Your_Web_Client_Id</string>
 
     <string name="not_have_account_register">Not have Account? <b>Register</b></string>
     <string name="already_have_account">Already have account? <b>Login</b></string>

@@ -1,0 +1,20 @@
+<resources>
+
+    <string name="app_name">Instagram</string>
+
+    <string name="default_webclient_id">1063176613988-8ngrdfd9jonnjqlmfc8o06l1a9hmsp90.apps.googleusercontent.com</string>
+
+    <string name="not_have_account_register">Not have Account? <b>Register</b></string>
+    <string name="already_have_account">Already have account? <b>Login</b></string>
+
+    <string name="didn_t_receive_otp_resend">Didn\'t Receive OTP? <b>Resend</b></string>
+    <string name="forgot_password_recover">Forgot Password? <b>Recover</b></string>
+
+    <string name="forgot_password_recovery">Forgot Password? Enter your registered Email. we will send password recovery instructions to it.</string>
+
+    <string name="change_password">To change password you must verify it\'s really you by entering your current password. Your new password should be different from current password.</string>
+    <string name="delete_account">Are you sure you want to delete your account including data? \n You will not be able to access your account again! \n This action can\'t be undone</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

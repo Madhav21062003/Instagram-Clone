@@ -179,10 +179,14 @@
             android:id="@+id/bioTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
             android:maxLines="3"
-            android:text="Bio"
+            android:text="Geek \n Don't be same, be better \n App Developer"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/nameTv"
+            app:layout_constraintHorizontal_bias="0.13"
             app:layout_constraintStart_toStartOf="@+id/nameTv"
             app:layout_constraintTop_toBottomOf="@+id/nameTv" />
 
@@ -204,19 +208,21 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/myTabs"
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/constraintLayout"
-        android:layout_marginTop="1dp">
-
-    </com.google.android.material.tabs.TabLayout>
+        android:layout_below="@id/constraintLayout"
+        app:tabTextColor="@android:color/white"
+        app:tabIconTint="@color/black"
+        android:backgroundTint="@color/white"
+        app:tabIndicatorColor="@color/black"
+        app:tabIndicatorHeight="3dp" />
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+        android:id="@+id/viewPager2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/myTabs"
-        />
+        android:layout_below="@id/tabLayout" />
+
 
 </RelativeLayout>

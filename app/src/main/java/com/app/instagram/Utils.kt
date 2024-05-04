@@ -10,6 +10,8 @@ import java.util.Locale
 // A class that will contain static functions, constants, variables that we will be used in whole application
 object Utils {
 
+    // Gender List
+    val genderList = listOf("Male", "Female", "Custom", "Prefer not to say")
 
     /**
      ** A function to show toast

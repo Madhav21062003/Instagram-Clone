@@ -34,11 +34,16 @@
             android:layout_alignParentBottom="true"/>
     </RelativeLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarRl">
+
     <RelativeLayout
         android:layout_below="@+id/toolbarRl"
         android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profileIv"
@@ -48,6 +53,7 @@
             android:background="@color/colorGray01"
             app:shapeAppearanceOverlay="@style/ImageStyle_Circle"
             android:layout_centerHorizontal="true"/>
+
 
         <TextView
             android:id="@+id/registerLabelledTv"
@@ -119,25 +125,110 @@
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameTil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:layout_below="@id/confirmPasswordTil"
+            android:layout_marginTop="10dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp">
+
+            <EditText
+                android:id="@+id/nameEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameTil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:layout_below="@id/nameTil"
+            android:layout_marginTop="10dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp">
+
+            <EditText
+                android:id="@+id/usernameEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/bioTil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bio"
+            android:layout_below="@id/usernameTil"
+            android:layout_marginTop="10dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp">
+
+            <EditText
+                android:id="@+id/bioEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="4"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/genderTil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gender"
+            android:layout_below="@id/bioTil"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomEnd="8dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/genderAct"
+                android:layout_width="match_parent"
+                android:drawablePadding="10dp"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
         <TextView
             android:id="@+id/haveAccountTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/confirmPasswordTil"
+            android:layout_below="@id/genderTil"
             style="@style/TextAppearance.MaterialComponents.Body2"
             android:text="@string/already_have_account"
             android:layout_marginTop="5dp"/>
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/registerBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
-            app:cornerRadius="8dp"
-            android:backgroundTint="@color/btnColor"
-            android:textAllCaps="true"
-            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/btnColorBlue"
+            android:text="Create account"
+            android:layout_below="@id/haveAccountTv"
+            android:padding="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:minHeight="@dimen/m_button_height"/>
     </RelativeLayout>
+
+    </ScrollView>
+
 
 </RelativeLayout>

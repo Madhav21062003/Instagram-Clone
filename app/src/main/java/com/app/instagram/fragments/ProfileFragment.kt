@@ -34,9 +34,9 @@ class ProfileFragment : Fragment() {
         viewPagerAdapter.addFragments(MyPostFragment(), "My Posts")
         viewPagerAdapter.addFragments(MyReelsFragment(), "My Reels")
 
-        binding.viewPager.adapter = viewPagerAdapter
-
-        binding.myTabs.setupWithViewPager(binding.viewPager)
+//        binding.viewPager.adapter = viewPagerAdapter
+//
+//        binding.myTabs.setupWithViewPager(binding.viewPager)
         return binding.root
 
     }

@@ -17,8 +17,7 @@
             android:layout_alignParentLeft="true"
             android:padding="5dp"
             android:layout_centerVertical="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/instagram_logo" />
+            android:src="@drawable/instagram" />
 
 
             <ImageView

@@ -5,11 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
-import androidx.activity.enableEdgeToEdge
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.app.instagram.HomeActivity
+
 import com.app.instagram.R
 import com.app.instagram.Utils
 import com.app.instagram.databinding.ActivityRegisterEmailBinding
@@ -39,22 +39,38 @@ class RegisterEmailActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+        binding.haveAccountTv.setOnClickListener {
+            startActivity(Intent(this@RegisterEmailActivity,LoginEmailActivity::class.java))
+        }
+
         binding.registerBtn.setOnClickListener{
             validateData()
         }
+
+        val autoCompleteTextView: AutoCompleteTextView = findViewById(R.id.genderAct)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, Utils.genderList)
+        autoCompleteTextView.setAdapter(adapter)
 
     }
 
     private var email = ""
     private var password = ""
     private var cPassword = ""
+    private var name = ""
+    private var username = ""
+    private var bio = ""
+    private var gender = ""
+
 
     private fun validateData() {
         // input data
         email = binding.emailEt.text.toString().trim()
         password = binding.passwordEt.text.toString().trim()
         cPassword = binding.confirmPasswordEt.text.toString().trim()
-        
+        name = binding.nameEt.text.toString()
+        username = binding.usernameEt.text.toString()
+        bio = binding.bioEt.text.toString()
+        gender = binding.genderAct.text.toString()
         //
         Log.e(TAG, "validateData: email: $email", )
         Log.e(TAG, "validateData: password: $password", )
@@ -77,6 +93,21 @@ class RegisterEmailActivity : AppCompatActivity() {
             binding.confirmPasswordEt.error = "Enter Confirm Password"
             binding.confirmPasswordEt.requestFocus()
         }
+        else if (name.isEmpty()){
+            binding.nameEt.error = "Enter name"
+            binding.nameEt.requestFocus()
+        }
+
+        else if (username.isEmpty()){
+            binding.usernameEt.error = "Enter username"
+            binding.usernameEt.requestFocus()
+        }
+
+
+        else if (gender.isEmpty()){
+            binding.genderAct.error = "Select or Enter Gender"
+            binding.genderAct.requestFocus()
+        }
         else if (password == cPassword){
             registerUser()
         }
@@ -97,6 +128,7 @@ class RegisterEmailActivity : AppCompatActivity() {
         firebaseAuth.createUserWithEmailAndPassword(email, password)
             .addOnSuccessListener {
                 Log.d(TAG, "registerUser: Resgister Success")
+//                startActivity(Intent(this@RegisterEmailActivity,HomeActivity::class.java))
                 updateUserInfo()
             }
             .addOnFailureListener { e->
@@ -117,23 +149,25 @@ class RegisterEmailActivity : AppCompatActivity() {
         val userEmail = firebaseAuth.currentUser!!.email
         val registerUserUid = firebaseAuth.uid
 
-        // setup data to save in firebase realtime db , most of the data will be empty and will set in edit profile
+//         setup data to save in firebase realtime db , most of the data will be empty and will set in edit profile
         val hashMap = HashMap<String,Any>()
-        hashMap["name"] = ""
+        hashMap["name"] = name
         hashMap["phoneCode"] = ""
         hashMap["phoneNumber"] = ""
         hashMap["profileImageUrl"] = ""
-        hashMap["dob"] = ""
+        hashMap["username"] = username
         hashMap["userType"] = "Email" // possible values Email/phone/Google
         hashMap["typingTo"] = ""
         hashMap["timeStamp"] = timeStamp
         hashMap["onlineStatus"] = true
         hashMap["email"] = "$userEmail"
         hashMap["uid"] = "$registerUserUid"
-        hashMap["bio"] = ""
+        hashMap["bio"] = bio
+        hashMap["gender"] = gender
 
 
-        // set data to firebase db
+
+//         set data to firebase db
         val ref = FirebaseDatabase.getInstance().getReference("Users")
         ref.child(registerUserUid!!)
             .setValue(hashMap)
@@ -156,4 +190,5 @@ class RegisterEmailActivity : AppCompatActivity() {
             }
 
     }
+
 }

@@ -6,4 +6,5 @@
     <color name="colorGray01">#959595</color>
     <color name="colorGray02">#c6c6c6</color>
     <color name="btnColor">#D81B60</color>
+    <color name="btnColorBlue">#3949AB</color>
 </resources>

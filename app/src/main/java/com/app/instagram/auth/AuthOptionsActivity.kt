@@ -170,3 +170,4 @@ class AuthOptionsActivity : AppCompatActivity() {
     }
 
 }
+

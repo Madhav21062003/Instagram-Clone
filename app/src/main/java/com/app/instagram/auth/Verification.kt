@@ -14,8 +14,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.app.instagram.HomeActivity
 import com.app.instagram.R
-import com.app.instagram.fragments.HomeFragment
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.FirebaseAuth
@@ -26,7 +26,7 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import java.util.concurrent.TimeUnit
 
-class verification : AppCompatActivity() {
+class Verification : AppCompatActivity() {
 
     private lateinit var auth:FirebaseAuth
     private lateinit var verifybtn:Button
@@ -174,7 +174,7 @@ class verification : AppCompatActivity() {
             }
     }
     private fun sendToMain(){
-        startActivity(Intent(this, HomeFragment::class.java))
+        startActivity(Intent(this, HomeActivity::class.java))
     }
 
     private fun addTextChangeListener(){

@@ -71,7 +71,7 @@ class AuthOptionsActivity : AppCompatActivity() {
 
         // Auth Using Phone Number
         binding.btnPhoneLogin.setOnClickListener {
-            startActivity(Intent(this, LoginPhoneActivity::class.java))
+            startActivity(Intent(this, SendOtp::class.java))
         }
 
         // Auth using Google Sign In

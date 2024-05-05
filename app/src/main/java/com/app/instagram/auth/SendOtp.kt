@@ -9,8 +9,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.app.instagram.HomeActivity
 import com.app.instagram.R
-import com.app.instagram.fragments.HomeFragment
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.FirebaseAuth
@@ -109,7 +109,7 @@ class SendOtp : AppCompatActivity() {
             // now need to ask the user to enter the code and then construct a credential
             // by combining the code with a verification ID.
             Log.d(TAG, "onCodeSent:$verificationId")
-            val intent= Intent(this@SendOtp, verification::class.java)
+            val intent= Intent(this@SendOtp, Verification::class.java)
             intent.putExtra("OTP",verificationId)
             intent.putExtra("resendToken",token)
             intent.putExtra("phoneNumber",number)
@@ -120,7 +120,7 @@ class SendOtp : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         if(auth.currentUser!=null){ //User is authenticated
-            startActivity(Intent(this@SendOtp, HomeFragment::class.java))
+            startActivity(Intent(this@SendOtp, HomeActivity::class.java))
         }
     }
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
@@ -142,7 +142,7 @@ class SendOtp : AppCompatActivity() {
             }
     }
     private fun sendToMain(){
-        startActivity(Intent(this@SendOtp, HomeFragment::class.java))
+        startActivity(Intent(this@SendOtp, HomeActivity::class.java))
     }
 
 

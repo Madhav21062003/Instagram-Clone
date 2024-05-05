@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".verification"
+    tools:context=".auth.Verification"
     android:background="#F3C5D4"
     android:scrollbars="none"
     android:overScrollMode="never">

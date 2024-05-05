@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F17CA3"
-    tools:context=".SendOtp">
+    tools:context=".auth.SendOtp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/otp_verification"
+            android:text="otp_verification"
             android:textColor="#1C1B1B"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -38,7 +38,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="@string/we_will_send_you_an_one_time_otp_on_this_given_n_mobile_number"
+            android:text="we_will_send_you_an_one_time_otp_on_this_given_n_mobile_number"
             android:textColor="#373232" />
 
         <TextView
@@ -49,7 +49,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
             android:gravity="center"
-            android:text="@string/enter_mobile_number"
+            android:text="enter_mobile_number"
             android:textColor="@color/black" />
 
         <LinearLayout

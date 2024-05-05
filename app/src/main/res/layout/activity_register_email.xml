@@ -59,6 +59,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/add_profile_image"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_alignRight="@+id/profileIv"
             android:layout_alignBottom="@+id/profileIv"
             android:background="@android:color/transparent"/>

@@ -23,7 +23,7 @@
             android:id="@+id/toolbarTitleTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="Create New Account"
             android:layout_centerInParent="true"
             style="@style/TextAppearance.MaterialComponents.Subtitle1"/>
 
@@ -37,6 +37,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/registerBtn"
         android:layout_below="@id/toolbarRl">
 
     <RelativeLayout
@@ -47,30 +48,28 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profileIv"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:src="@drawable/ic_person"
             android:background="@color/colorGray01"
             app:shapeAppearanceOverlay="@style/ImageStyle_Circle"
             android:layout_centerHorizontal="true"/>
 
-
-        <TextView
-            android:id="@+id/registerLabelledTv"
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create New Account"
-            android:layout_below="@+id/profileIv"
-            android:layout_centerHorizontal="true"
-            style="@style/TextAppearance.MaterialComponents.Subtitle1"
-            android:layout_marginTop="10dp"/>
+            android:src="@drawable/add_profile_image"
+            android:layout_alignRight="@+id/profileIv"
+            android:layout_alignBottom="@+id/profileIv"
+            android:background="@android:color/transparent"/>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailTil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
-            android:layout_below="@id/registerLabelledTv"
+            android:layout_below="@id/profileIv"
             android:layout_marginTop="10dp"
             app:boxCornerRadiusBottomEnd="8dp"
             app:boxCornerRadiusTopEnd="8dp"
@@ -215,20 +214,20 @@
             android:layout_marginTop="5dp"/>
 
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/registerBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/btnColorBlue"
-            android:text="Create account"
-            android:layout_below="@id/haveAccountTv"
-            android:padding="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:minHeight="@dimen/m_button_height"/>
+
     </RelativeLayout>
 
     </ScrollView>
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/registerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/btnColorBlue"
+        android:text="Create account"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:minHeight="@dimen/m_button_height"/>
 
 </RelativeLayout>
